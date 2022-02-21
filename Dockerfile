@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM ruby:3.0.2
 ARG RAILS_ENV
-RUN echo "Deploying with rails env $RAILS_ENV"
+RUN echo "Deploying rails with env $RAILS_ENV"
 
 # ARG docker_env
 # RUN echo "Deploying with rails env $docker_env"
