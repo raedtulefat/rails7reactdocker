@@ -1,27 +1,27 @@
 version: "3.9"
 services:
-  db:
-    image: postgres
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-    environment:
-      POSTGRES_PASSWORD: password
+#   db:
+#     image: postgres
+#     volumes:
+#       - ./tmp/db:/var/lib/postgresql/data
+#     environment:
+#       POSTGRES_PASSWORD: password
   backend:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
-    volumes:
-      - .:/rails7react-docker
+    # volumes:
+    #   - $RAILS_PATH
     ports:
       - "3001:3001"
-    depends_on:
-      - db
-  frontend:
-    image: "node:16.13.2-alpine"
-    working_dir: /app
-    volumes:
-      - ./reactapp:/app
-    ports:
-      - "3000:3000"
-    command: "yarn start"
-    depends_on:
-      - backend      
+    # depends_on:
+    #   - db
+  # frontend:
+  #   image: "node:16.13.2-alpine"
+  #   working_dir: /app
+  #   volumes:
+  #     - ./reactapp:/app
+  #   ports:
+  #     - "3000:3000"
+  #   command: "yarn start"
+  #   depends_on:
+  #     - backend      
