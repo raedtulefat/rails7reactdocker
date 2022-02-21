@@ -6,8 +6,8 @@ RUN echo "Deploying with rails env $RAILS_ENV"
 # ARG docker_env
 # RUN echo "Deploying with rails env $docker_env"
 
-# ENV BUNDLER_VERSION=2.2.22
-# ENV RAILS_ENV=$docker_env
+ENV BUNDLER_VERSION=2.2.22
+ENV RAILS_ENV=$RAILS_ENV
 
 
 
