@@ -13,6 +13,8 @@ services:
     #   - $RAILS_PATH
     ports:
       - "3001:3001"
+    environment:
+      RAILS_ENV: production
     # depends_on:
     #   - db
   # frontend:
