@@ -5,7 +5,7 @@ RUN echo "Deploying rails with env $RAILS_ENV"
 
 ENV BUNDLER_VERSION=2.2.22
 
-RUN apk add --update --no-cache \
+RUN apk-get add --update --no-cache \
       binutils-gold \
       build-base \
       curl \
