@@ -1,10 +1,14 @@
 # syntax=docker/dockerfile:1
 FROM ruby:3.0.2
-# ARG RAILS_ENV
+ARG RAILS_ENV
 RUN echo "Deploying with rails env $RAILS_ENV"
 
-ENV BUNDLER_VERSION=2.2.22
-ENV RAILS_ENV=$RAILS_ENV
+# ARG docker_env
+# RUN echo "Deploying with rails env $docker_env"
+
+# ENV BUNDLER_VERSION=2.2.22
+# ENV RAILS_ENV=$docker_env
+
 
 
 # RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
