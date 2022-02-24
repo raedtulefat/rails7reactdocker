@@ -1,11 +1,11 @@
 # syntax=docker/dockerfile:1
-FROM ruby:3.0.2
+FROM ruby:3.1.1-bullseye
 ARG RAILS_ENV
 RUN echo "Deploying rails with env $RAILS_ENV"
 
 ENV BUNDLER_VERSION=2.2.22
 
-RUN apk-get add --update --no-cache \
+RUN apk add --update --no-cache \
       binutils-gold \
       build-base \
       curl \
