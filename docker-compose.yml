@@ -22,6 +22,6 @@ services:
       - ./reactapp:/app
     ports:
       - "3000:3000"
-    command: "yarn start"
+    command: "npm start"
     # depends_on:
-    #   - backend      
+    #   - backend

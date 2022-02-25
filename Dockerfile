@@ -10,7 +10,7 @@ RUN bundle install
 
 COPY package.json ./
 COPY package-lock.json ./
-RUN npm install --silent
+RUN npm install
 RUN npm install react-scripts
 
 # Add a script to be executed every time the container starts.
