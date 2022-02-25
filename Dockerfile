@@ -7,7 +7,10 @@ WORKDIR /rails7react-docker
 COPY Gemfile /rails7react-docker/Gemfile
 COPY Gemfile.lock /rails7react-docker/Gemfile.lock
 RUN bundle install
-RUN npm install
+
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
 RUN npm install react-scripts
 
 # Add a script to be executed every time the container starts.
