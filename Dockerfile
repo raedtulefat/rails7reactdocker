@@ -8,8 +8,8 @@ COPY Gemfile /rails7react-docker/Gemfile
 COPY Gemfile.lock /rails7react-docker/Gemfile.lock
 RUN bundle install
 
-COPY package.json ./
-COPY package-lock.json ./
+COPY package.json ./reactapp
+COPY package-lock.json ./reactapp
 RUN npm install
 RUN npm install react-scripts
 
