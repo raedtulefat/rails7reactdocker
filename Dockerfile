@@ -2,16 +2,16 @@
 FROM ruby:3.0.2
 ENV BUNDLER_VERSION=2.2.22
 
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client npm install
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 WORKDIR /rails7react-docker
 COPY Gemfile /rails7react-docker/Gemfile
 COPY Gemfile.lock /rails7react-docker/Gemfile.lock
 RUN bundle install
 
-# COPY package.json ./reactapp
-# COPY package-lock.json ./reactapp
-# RUN npm install
-# RUN npm install react-scripts
+COPY package.json ./reactapp
+COPY package-lock.json ./reactapp
+RUN npm install
+RUN npm install react-scripts
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
