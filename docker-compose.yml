@@ -15,20 +15,15 @@ services:
   #     - "3001:3001"
   #   depends_on:
   #     - db
-  reactsetup:
-    image: "node:16.13.2-alpine"
-    working_dir: /app
-    volumes:
-      - ./reactapp:/app
-    command: "npm install"
   frontend:
-    image: "node:16.13.2-alpine"
+    build:
+      context: ./reactapp
+      dockerfile: Dockerfile
     working_dir: /app
     volumes:
       - ./reactapp:/app
     ports:
       - "3000:3000"
-    command: "npm start"
-    depends_on:
-    - reactsetup
+    command: "yarn start"
+    # depends_on:
     #   - backend
