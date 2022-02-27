@@ -19,8 +19,11 @@ services:
     build:
       context: ./reactapp
       dockerfile: Dockerfile
+    environment:
+      CHOKIDAR_USEPOLLING: "true"   
     working_dir: /app
     volumes:
+      - /app/node_modules
       - ./reactapp:/app
     ports:
       - "3000:3000"
