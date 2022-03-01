@@ -4,7 +4,12 @@ This README would normally document whatever steps are necessary to get the appl
 
 # DEV SETUP
 - install docker
+- docker-compose run backend rake db:seed
 - docker-compose build
+
+# DEV SETUP - REBUILD
+- for when new modules, gems and packages are added
+  > docker-compose down -v && docker-compose up --build
 
 # Start the apps
 - docker-compose up
