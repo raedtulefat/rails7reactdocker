@@ -29,14 +29,16 @@ This README would normally document whatever steps are necessary to get the appl
 
   ###### container bash terminal:
   - open docker bash terminal
-    ```docker-compose run backend bash```
+    `docker-compose run backend bash`
     * here you can
       - start rails console:
         `rails c`
       - run rails generate commands like:
-        `rails generate model Comment subject:string body:text`
-        `rails generate migration AddUserNameColumnToUser username:string`
-        `rails generate controller Comments index show`
+      ```
+        rails generate model Comment subject:string body:text
+        rails generate migration AddUserNameColumnToUser username:string
+        rails generate controller Comments index show
+      ```
       - run rails migrations to:
         `rails db:migrate`
       - to erase database:
