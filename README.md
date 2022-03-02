@@ -29,7 +29,7 @@ This README would normally document whatever steps are necessary to get the appl
 
   ###### container bash terminal:
   - open docker bash terminal
-    `docker-compose run backend bash`
+    ```docker-compose run backend bash```
     * here you can
       - start rails console:
         `rails c`
