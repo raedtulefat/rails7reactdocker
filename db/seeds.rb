@@ -3,16 +3,19 @@
 #
 # User.create(username: "user", password: "password")
 
-if Comment.count == 0
-  # Comment.create(
-  #   subject: "Comment subject 1",
-  #   body: "Comment body 1")
-  
-  # Comment.create(
-  #   subject: "Comment subject 2",
-  #   body: "Comment body 2")
-  
-  # Comment.create(
-  #   subject: "Comment subject 3",
-  #   body: "Comment body 3")
+if User.count == 0
+  admin_params = {}
+  admin_params[:email] = 'admin@email.com'
+  admin_params[:password] = 'password'
+  User.create(admin_params)
+
+  user_1_params = {}
+  user_1_params[:email] = 'user_1@email.com'
+  user_1_params[:password] = 'password'
+  User.create(user_1_params)
+
+  user_2_params = {}
+  user_2_params[:email] = 'user_2@email.com'
+  user_2_params[:password] = 'password'
+  User.create(user_2_params)
 end

@@ -1,6 +1,13 @@
 class Api::V1::UsersController < ApplicationController
   # before_action :authorized, only: [:auto_login]
 
+  # GET /users
+  def index
+    @users = User.all
+
+    render json: @users
+  end 
+
   # REGISTER
   def create
     @user = User.create(user_params)
@@ -8,22 +15,21 @@ class Api::V1::UsersController < ApplicationController
       token = encode_token({user_id: @user.id})
       render json: {user: @user, token: token}
     else
-      render json: {error: "Invalid username or password"}
+      render json: {error: "Invalid email or password"}
     end
   end
 
   # LOGGING IN
   def login
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(email: params[:email])
 
     if @user && @user.authenticate(params[:password])
       token = encode_token({user_id: @user.id})
       render json: {user: @user, token: token}
     else
-      render json: {error: "Invalid username or password"}
+      render json: {error: "Invalid email or password"}
     end
   end
-
 
   def auto_login
     render json: @user
@@ -32,6 +38,6 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:username, :password, :age)
+    params.permit(:email, :password, :age)
   end
 end
