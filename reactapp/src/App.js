@@ -1,23 +1,25 @@
 import "./App.css";
 import axios from "axios";
-import Comments from "./components/comments";
+import Users from "./components/users";
 import { useEffect, useState } from "react";
 
 const APU_URL =
-  "http://localhost:3000/api/v1/comments?access_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.oT7kSePnYs7eVIsRIzIi0UEC7XBclsrO3qrnXwic8Zg";
+  "http://localhost:3001/api/v1/users?access_token=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.oT7kSePnYs7eVIsRIzIi0UEC7XBclsrO3qrnXwic8Zg";
 
 function getAPIData() {
+  console.log(axios.get(APU_URL));
   return axios.get(APU_URL).then((response) => response.data);
 }
 
 // npm run start
 function App() {
-  const [comments, setComments] = useState([]);
+  const [users, setUsers] = useState([]);
   useEffect(() => {
     let mounted = true;
+    
     getAPIData().then((items) => {
       if (mounted) {
-        setComments(items);
+        setUsers(items);
       }
     });
     return () => (mounted = false);
@@ -26,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="text-red-600">React-App</h1>
-      <Comments comments={comments}></Comments>
+      <Users users={users}></Users>
     </div>
   );
 }
