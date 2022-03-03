@@ -1,6 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the application up and running.
+Below are the steps document to get the project setup, run and troubleshoot.
 
 
 ## DEV's setup Checklist
