@@ -84,3 +84,19 @@ Below are the steps document to get the project setup, run and troubleshoot.
 - force rebuild the project (this will not affect the database)
 
   `docker-compose up --force-recreate`
+
+## React: adding new libraries
+- to add dependencies to react application, we must first stop all running docker instances
+
+`docker-compose down`
+
+- in the file reactapp/Dockerfile
+  * add the your depency before the line `RUN npm install` like so:
+  
+  `RUN npm install axios --save`
+
+- save, rebuild and start docker again
+  ```
+    docker-compose build
+    docker-compose up
+  ```
