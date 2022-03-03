@@ -72,7 +72,7 @@ Below are the steps document to get the project setup, run and troubleshoot.
 
   `debugger` *the terminal will have the server stopped where the debugger was added*
   * c to continue
-  * n to line step
+  * n to next line
   * s to step into the method
   * ctrl+c to exit
 
