@@ -33,11 +33,11 @@ Below are the steps document to get the project setup, run and troubleshoot.
 
   `localhost:3001`
 
-## container bash terminal:
+## Container bash terminal:
 - open docker bash terminal
 
-`docker-compose run backend bash`
-- here you can
+  `docker-compose run backend bash`
+- here you can:
   * start rails console:
 
     `rails c`
