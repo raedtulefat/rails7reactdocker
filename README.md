@@ -32,50 +32,51 @@ Below are the steps document to get the project setup, run and troubleshoot.
   ###### backend rails server (in the browser):
 
   `localhost:3001`
-  ###### container bash terminal:
-  - open docker bash terminal
 
-    `docker-compose run backend bash`
-    * here you can
-      - start rails console:
+## container bash terminal:
+- open docker bash terminal
 
-        `rails c`
-      - run rails generate commands like:
-      ```
-        rails generate model Comment subject:string body:text
-        rails generate migration AddUserNameColumnToUser username:string
-        rails generate controller Comments index show
-      ```
-      - run rails migrations to:
+`docker-compose run backend bash`
+- here you can
+  * start rails console:
 
-        `rails db:migrate`
-      - to erase database:
+    `rails c`
+  * run rails generate commands like:
+  ```
+    rails generate model Comment subject:string body:text
+    rails generate migration AddUserNameColumnToUser username:string
+    rails generate controller Comments index show
+  ```
+  * run rails migrations to:
 
-        `rails db:drop`
-      - to reset database:
+    `rails db:migrate`
+  * to erase database:
 
-        `rails db:setup`
+    `rails db:drop`
+  * to reset database:
+
+    `rails db:setup`
 
 ## Debuuger within Docker
-  - start docker comtainer with a detached terminal
+- start docker comtainer with a detached terminal
 
-    `docker-compose up -d`
-  - attached the container id to the detached terminal
+  `docker-compose up -d`
+- attached the container id to the detached terminal
 
-    ```
-    docker container ls
-    docker attached <container_id>
-    ```
-    *container_id e.g 782bfa0c5d3b first column next to rails7react-docker_backend*
-  - add debuger in ruby code
+  ```
+  docker container ls
+  docker attached <container_id>
+  ```
+  *container_id e.g 782bfa0c5d3b first column next to rails7react-docker_backend*
+- add debuger in ruby code
 
-    `debugger` *the terminal will have the server stopped where the debugger was added*
-    * c to continue
-    * n to line step
-    * s to step into the method
-    * ctrl+c to exit
+  `debugger` *the terminal will have the server stopped where the debugger was added*
+  * c to continue
+  * n to line step
+  * s to step into the method
+  * ctrl+c to exit
 
 ## Docker Trouble shooting
-  - force rebuild the project (this will not affect the database)
+- force rebuild the project (this will not affect the database)
 
-    `docker-compose up --force-recreate`
+  `docker-compose up --force-recreate`
