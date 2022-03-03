@@ -62,8 +62,11 @@ This README would normally document whatever steps are necessary to get the appl
     `docker-compose up -d`
   - attached the container id to the detached terminal
 
-    `docker container ls`
-    `docker attached <container_id>` *container_id e.g 782bfa0c5d3b first column next to rails7react-docker_backend*
+    ```
+    docker container ls
+    docker attached <container_id>
+    ```
+    *container_id e.g 782bfa0c5d3b first column next to rails7react-docker_backend*
   - add debuger in ruby code
 
     `debugger` *the terminal will have the server stopped where the debugger was added*
