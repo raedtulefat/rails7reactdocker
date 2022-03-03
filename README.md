@@ -6,7 +6,8 @@ This README would normally document whatever steps are necessary to get the appl
 ## DEV's setup Checklist
 - [ ] add ssh key to repository
 - [ ] clone the project
-  ```git clone git@github.com:raedtulefat/rails7react-docker.git```
+
+  `git clone git@github.com:raedtulefat/rails7react-docker.git`
 - [ ] install docker from [Official Docker Site](https://docs.docker.com/desktop/mac/install/).
 - [ ] confirm docker install
   `docker --versions`
