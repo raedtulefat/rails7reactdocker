@@ -8,8 +8,8 @@ default: &default
 
 development:
   <<: *default
-  database: rails7react_docker_development
+  database: rails7reactdocker_development
 
 test:
   <<: *default
-  database: rails7react_docker_test
+  database: rails7reactdocker_test

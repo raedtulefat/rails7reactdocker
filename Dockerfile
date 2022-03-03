@@ -3,9 +3,9 @@ FROM ruby:3.0.2
 ENV BUNDLER_VERSION=2.2.22
 
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
-WORKDIR /rails7react-docker
-COPY Gemfile /rails7react-docker/Gemfile
-COPY Gemfile.lock /rails7react-docker/Gemfile.lock
+WORKDIR /rails7reactdocker
+COPY Gemfile /rails7reactdocker/Gemfile
+COPY Gemfile.lock /rails7reactdocker/Gemfile.lock
 RUN bundle install
 
 # Add a script to be executed every time the container starts.

@@ -7,17 +7,21 @@ Below are the steps document to get the project setup, run and troubleshoot.
 - [ ] add ssh key to repository
 - [ ] clone the project
 
-  `git clone git@github.com:raedtulefat/rails7react-docker.git`
+  `git clone git@github.com:raedtulefat/rails7reactdocker.git`
+
 - [ ] install docker from [Official Docker Site](https://docs.docker.com/desktop/mac/install/).
 - [ ] confirm docker install
 
   `docker --versions`
+
 - [ ] Build the container (might take a while)
 
-  `docker-compose build`  
+  `docker-compose build`
+
 - [ ] open the container bash terminal
 
   `docker-compose run backend bash`
+
 - [ ] setup rails database
 
   `rails db:setup`
@@ -67,7 +71,7 @@ Below are the steps document to get the project setup, run and troubleshoot.
   docker container ls
   docker attached <container_id>
   ```
-  *container_id e.g 782bfa0c5d3b first column next to rails7react-docker_backend*
+  *container_id e.g 782bfa0c5d3b first column next to rails7reactdocker_backend*
 - add debuger in ruby code
 
   `debugger` *the terminal will have the server stopped where the debugger was added*
